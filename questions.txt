@@ -1,0 +1,4 @@
+Why actually the function is called the first class citizens?
+
+Couldn't understand what new function() does?
+

@@ -1,0 +1,12 @@
+// run without jQuery
+var prop = {};
+for (var attr in window) {
+	prop[attr] = true
+}
+
+// now run withg jQuery library included.
+for (var attr in window) {
+	if (prop[attr] == undefined) {
+		console.log("Gotcha: " + attr);
+	}
+}
