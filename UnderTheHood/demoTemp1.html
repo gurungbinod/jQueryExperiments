@@ -1,0 +1,16 @@
+<html>
+<head>
+<script src="jQueryVersions/jquery-1.0.js"></script>
+</head>
+<body>
+	<p class='foo'>Hello</p>
+</body>
+<script type="text/javascript">
+debugger;
+var obj = {a:[1,2,3]};
+function f() {
+console.log("in f");
+}
+jQuery.extend(obj, {f:f});
+</script>
+</html>
