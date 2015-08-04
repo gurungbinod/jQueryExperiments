@@ -1,0 +1,26 @@
+<html>
+<head>
+<script src="jQueryVersions/jquery-1.0.js"></script>
+</head>
+<body>
+<h1> jQuery.each with an array of DOM elements</h1>
+<p class="foo">This is foo 1</p>
+<p class="foo">This is foo 2</p>
+<p class="foo">This is foo 3</p>
+<p class="foo">This is foo 4</p>
+<p class="foo">This is foo 5</p>
+</body>
+<script type="text/javascript">
+    var ps = document.querySelectorAll(".foo");
+    console.log(ps);
+    function setBackground(i, el) {
+        if (i%2===1) el.style.backgroundColor="red";
+    }
+    //FINDING
+    //if we pass 3 rd argument to $.each function - it will overwrite the default argument
+    //otherwise it will take the default key value pairs from the first arguments
+
+    //jQuery.each(ps, setBackground,["1",$(".foo")[0]]);
+    jQuery.each(ps, setBackground);
+</script>
+</html>

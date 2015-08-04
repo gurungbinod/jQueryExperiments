@@ -1,0 +1,18 @@
+<html>
+<head>
+<script src="jQueryVersions/jquery-1.0.js"></script>
+</head>
+<body>
+<h3>Here is an invocation of jQuery.each with 3 arguments.Why is the third argument of jQuery.each required to be an array?</h3>
+<h3><em>It's because when we look at line 332 in jquery source code, it uses fn.apply which expects second arguments as an array.</em></h3>
+</body>
+<script type="text/javascript">
+	var a = [1, 2, 3, 4];
+	var b = [];
+	jQuery.each(a,
+	   function(fn) {	
+	      b.push(fn(this));
+	   },  
+	   [function(n){return n+1}]);
+</script>
+</html>

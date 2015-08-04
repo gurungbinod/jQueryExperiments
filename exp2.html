@@ -1,0 +1,28 @@
+<html>
+<head>
+<script src="jQueryVersions/jquery-1.0.js"></script>
+</head>
+<body>
+<h1>Use jQuery.each to modify the elements of an array</h1>
+</body>
+<script type="text/javascript">
+    var a = ["up", "down", "left", "right"];
+    var b = {};
+
+    function myconcat(suffix) {
+        // b[this] = this + suffix;   // note that b is in the closure of myconcat
+    }
+    //FINDING
+    //the third argument of jQuery.each required to be an array because it makes the use of --  apply function -- which takes the array argument
+    jQuery.each(a, myconcat, ["!","&"]);
+
+    $.each(a, function (suffix,prefix) {
+
+        b[this] = prefix+this+suffix;
+
+        //when an object is concatinated with any thing, it is converted into string
+        console.log(typeof (this+""));
+    }, ["!","&"]);
+    console.log(b);
+</script>
+</html>

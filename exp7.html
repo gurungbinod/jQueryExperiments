@@ -1,0 +1,31 @@
+<html>
+<head>
+<script src="jQueryVersions/jquery-1.0.js"></script>
+<script src="console.min.js"></script>
+<script src="consolejs_init.js"></script>
+</head>
+<body>
+<h3>Use jQuery.extend to add a toString method to jQuery.browser. What would happen if the jQuery.browser argument were omitted from the call to jQuery.extend?</h3>
+<h3><em></em></h3>
+</body>
+<script type="text/javascript">
+	console.log('----------------With jQuery.browser argument----------'.green);
+	var el;
+	var f = function () {
+	   var buffer = "safari: " + this.safari;
+	   buffer += "<br/>opera: " + this.opera;
+	   buffer += "<br/>msie: " + this.msie;
+	   buffer += "<br/>mozilla: " + this.mozilla;
+	   return buffer;
+	}
+	jQuery.extend(jQuery.browser, {toString: f});
+	console.log(jQuery.browser.toString());
+
+	console.log('----------------Omit jQuery.browser argument---------- \n \n'.green);
+
+	console.log('In this case,' + ' toString'.orange + ' method will be extended on top level i.e. window.'.green);
+	console.log('But in this case'.green + ' this'.orange + ' will refer to window, and hence as per our function f, we have code this.safari, this.opera..., which is not defined and gives undefined.'.green);
+	jQuery.extend({toString: f});
+	console.log(jQuery.toString());
+</script>
+</html>
