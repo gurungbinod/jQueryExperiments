@@ -3,10 +3,7 @@
 <script src="jQueryVersions/jquery-1.0.js"></script>
 </head>
 <body>
-<ul>
-    <li><a href="exp1.html">Add a function to an object using jQuery.extend()</a></li>
-    <li><a href="exp2.html">Use jQuery.each to modify the elements of an array</a></li>
-</ul>
+<h1>Use jQuery.each to modify the elements of an array</h1>
 </body>
 <script type="text/javascript">
     var a = ["up", "down", "left", "right"];
@@ -17,5 +14,6 @@
     }
 
     jQuery.each(a, myconcat, ["!"]);
+    console.log(b);
 </script>
 </html>
