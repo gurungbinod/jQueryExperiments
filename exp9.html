@@ -29,6 +29,9 @@
 		console.log(a1 + ' merge '.bold + a2);
 		console.log("=> ".red + result);
 
-		console.log("[1,2, 'a'] merge ['a', 2, 'c']")
+		var a1 = [1,2,'a'];
+		var a2 = ['a', 2, 'c'];
+		console.log("\n" + a1 + " merge " + a2);
+		console.log("=> ".red + jQuery.merge(a1, a2));
 	</script>
 </html>
