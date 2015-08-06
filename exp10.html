@@ -1,0 +1,30 @@
+<html>
+<head>
+<script src="jQueryVersions/jquery-1.0.js"></script>
+<script src='jQueryVersions/modernizr.js'></script>
+</head>
+<body>
+<h1> jQuery.each with an array of DOM elements</h1>
+<p class="foo">This is foo 1</p>
+<p class="foo">This is foo 2</p>
+<p class="foo">This is foo 3</p>
+<p class="foo">This is foo 4</p>
+<p class="foo">This is foo 5</p>
+</body>
+<script type="text/javascript">
+    console.log("Use jQuery.map to multiply all elements of an array by two");
+    var a = [1, 2, 3, 4, 3, 2, 1];
+    var f = function(value, index) {
+        return value*2;
+    }
+    console.log("Array Before Multiplication: ");
+    console.log(a);
+    result = jQuery.map(a, f);
+
+    //FINDING: $.map makes the use of $.merge function that removes the duplicates.
+
+    console.log("Array After Multiplication: ");
+    console.log(result);
+
+</script>
+</html>

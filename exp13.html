@@ -1,0 +1,30 @@
+<html>
+  <head>
+    <script src="jQueryVersions/jquery-1.0.js"></script>
+    <script src="console.min.js"></script>
+    <script src="consolejs_init.js"></script>
+  </head>
+  <body>
+    <span class = "context">
+      Use jQuery.grep to select the even elements from an array, e.g., <br />
+
+      a = [1, 2, 3, 4]; <br />
+      result = jQuery.grep(a, "a % 2 == 0"); <br />
+      How could you use "a % 2 == 0" to select the odd elements of the array? <br />
+      <em> Pass third parameters to inverse the logic, or change the logic in second params to select odd elements.
+    </span>
+  </body>
+
+  <script type="text/javascript">
+    console.log("Experiment 13".bold.underline.blue);
+    a = [1, 2, 3, 4];
+    result = jQuery.grep(a, "a % 2 == 0");
+
+    console.log("Even elements: " + result);
+
+    console.log("Odd elements: " + jQuery.grep(a, "a % 2 == 0", true))
+    console.log("Odd elements (logic changed): " + jQuery.grep(a, "a % 2 != 0"))
+
+
+  </script>
+</html>

@@ -1,0 +1,16 @@
+<html>
+<head>
+<script src="jQueryVersions/jquery-1.0.js"></script>
+<script src='jQueryVersions/modernizr.js'></script>
+</head>
+<body>
+<h1> At which line Modernizr.canvas is set to true?</h1>
+</body>
+<script type="text/javascript">
+    //Modernizr.canvas is set to true in line 421 of modernizr.js
+    //test object is created to test the features of current UA and is later assigned to Modernizer object in line 943
+    if (Modernizr.canvas) { 
+	   console.log("Browser supports canvas");
+	}
+</script>
+</html>

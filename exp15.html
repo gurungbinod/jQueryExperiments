@@ -1,0 +1,79 @@
+<html>
+  <head>
+    <script src="jQueryVersions/jquery-1.0.js"></script>
+    <script src="console.min.js"></script>
+    <script src="consolejs_init.js"></script>
+  </head>
+  <body>
+    <span class = "context">
+      jQuery makes frequent use of regular expressions. If you aren't familiar with regular expressions you should seek out a <br />
+      tutorial on the Internet that explains them. Here is one that is well done http://www.regular-expressions.info/. The program <br />
+      below evaluates some of the regular expressions used by jQuery. Please run it and verify that all match the string <br />associated with them. <br />
+
+      Modify each string so that its associated regular expression does not match.
+    </span>
+  </body>
+
+  <script type="text/javascript">
+    console.log("Experiment 15".bold.underline.blue);
+
+    console.log('With given regular expressions and string matches'.green);
+    var i, len, regexps, regexp;
+    regexps = [
+       {line:36,  s:"  ", re:/^[^<]*(<.+>)[^>]*$/},
+       {line:344, s:"cl1 cl2 cl3", re:/(^|\s*\b[^-])cl2($|\b(?=[^-]))/, usage:""},
+       {line:349, s:" foo def", re:/(^|\s)foo(\s|$)/, usage:""},
+       {line:553, s:"//abc", re:/^\/\//i, usage:'jQuery.trim(t).replace( /^\/\//i, "" )'},
+       {line:558, s:"/..abc", re:/^(\.\.|\/\.\.)/, usage:""},
+       {line:558, s:">abc", re:/^(>|\/)/, usage:""},
+       {line:558, s:"+abc", re:/^(\+)/, usage:""},
+       {line:558, s:"~abc", re:/^(~)/, usage:""},
+       {line:575, s:".foo", re:/^([#.]?)([a-z0-9\\*_-]*)/i, usage:""},
+       {line:662, s:"a[b]", re:/^[a-z[({<*:.#]/},
+       {line:675, s:"[@abc='def']", re:/^\[ *(@)([a-z*_-][a-z0-9_-]*) *([!*$^=]*) * *'?"?([^'"]*?)'?"? *\]/i},
+       {line:675, s:"['abc']", re:/^(\[) *'?"?([^'"]*?)'?"? *\]/i},
+       {line:675, s:":aBc('def')", re:/^(:)([a-z*_-][a-z0-9_-]*)\( *'?"?([^'"]*?)'?"? *\)/i},
+       {line:675, s:"#ID", re:/^([:.#]*)([a-z*_-][a-z0-9_-]*)/i},
+       {line:715, s:"  abc", re:/^\s+|\s+$/, usage:'t.replace(/^\s+|\s+$/g, "")'}
+    ];
+    len = regexps.length;
+    for (i=0; i<len; i++) {
+      regexp = regexps[i];
+      if (regexp.re.test(regexp.s)) {
+        console.log("" + regexp.line + " matched.")
+      } else {
+        console.log("" + regexp.line + " not matched.");
+      }
+    }
+
+    // change string to alter the regex match
+    console.log('\nAfter modified string val'.green);
+    regexps = [
+       {line:36,  s:"<.+>", re:/^[^<]*(<.+>)[^>]*$/},
+       {line:344, s:"-cl3", re:/(^|\s*\b[^-])cl2($|\b(?=[^-]))/, usage:""},
+       {line:349, s:" afoo def", re:/(^|\s)foo(\s|$)/, usage:""},
+       {line:553, s:"//abc", re:/^\/\//i, usage:'jQuery.trim(t).replace( /^\/\//i, "" )'},
+       {line:558, s:"/..abc", re:/^(\.\.|\/\.\.)/, usage:""},
+       {line:558, s:">abc", re:/^(>|\/)/, usage:""},
+       {line:558, s:"+abc", re:/^(\+)/, usage:""},
+       {line:558, s:"~abc", re:/^(~)/, usage:""},
+       {line:575, s:".foo", re:/^([#.]?)([a-z0-9\\*_-]*)/i, usage:""},
+       {line:662, s:"a[b]", re:/^[a-z[({<*:.#]/},
+       {line:675, s:"[@abc='def']", re:/^\[ *(@)([a-z*_-][a-z0-9_-]*) *([!*$^=]*) * *'?"?([^'"]*?)'?"? *\]/i},
+       {line:675, s:"['abc']", re:/^(\[) *'?"?([^'"]*?)'?"? *\]/i},
+       {line:675, s:":aBc('def')", re:/^(:)([a-z*_-][a-z0-9_-]*)\( *'?"?([^'"]*?)'?"? *\)/i},
+       {line:675, s:"#ID", re:/^([:.#]*)([a-z*_-][a-z0-9_-]*)/i},
+       {line:715, s:"  abc", re:/^\s+|\s+$/, usage:'t.replace(/^\s+|\s+$/g, "")'}
+    ];
+
+    for (i=0; i<len; i++) {
+      regexp = regexps[i];
+      if (regexp.re.test(regexp.s)) {
+        console.log("" + regexp.line + " matched.")
+      } else {
+        console.log("" + regexp.line + " not matched.");
+      }
+    }
+
+  </script>
+</html>

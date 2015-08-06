@@ -1,0 +1,20 @@
+<html>
+<head>
+<script src="jQueryVersions/jquery-1.0.js"></script>
+</head>
+<body>
+<h1>Use jQuery.map to modify DOM elements</h1>
+<p>Para 1</p>
+<p>Para 2</p>
+<p>Para 3</p>
+</body>
+<script type="text/javascript">
+
+    var els = document.querySelectorAll("p");
+    result = jQuery.map(els, "a.style.backgroundColor='red';");
+    //$("p").css("background-color", "red");
+
+    console.log('Is the above equivalent to $("p").css("background-color", "red")');
+    console.log("------------------------------ YES -----------------------------");
+</script>
+</html>

@@ -1,0 +1,37 @@
+<html>
+  <head>
+    <script src="jQueryVersions/jquery-1.0.js"></script>
+    <script src="console.min.js"></script>
+    <script src="consolejs_init.js"></script>
+  </head>
+  <body>
+    <span class = "context">
+      Pass a string rather than a function as the second argument of jQuery.map, e.g, <br />
+
+      var a = [1, 2, 3, 4, 3, 2, 1]; <br />
+      result = jQuery.map(a, "a*2"); <br /> <br />
+      Would "b*2" work? Why or why not? <br />
+      Nope, it won't work. See line no 791 in jquery1.0. <br />
+      <em>fn = new Function("a","return " + fn);<em />
+    </span>
+
+  </body>
+
+  <script type="text/javascript">
+    console.log("Experiment 11".bold.underline.blue);
+
+    var a = [1, 2, 3, 4, 3, 2, 1];
+    result = jQuery.map(a, "a*2");
+    console.log(result);
+    console.log('Result was 2, 4, 6, 8. But we had 7 elements in an array. Interesting huh??'.orange);
+    console.log('Look at line 802 in source. It is using jQuery.merge :)'.orange);
+    // when function string is b*2
+    // console.log(jQuery.map(a, "b*2")); //throws exception
+
+    // actual function is passed
+    console.log('_____________________________________'.green);
+    console.log('Using user defined anonymous function'.green);
+    var a = [1, 2, 3, 4, 3, 2, 1];
+    console.log(jQuery.map(a, function(val, index) { return index * val } ));
+  </script>
+</html>
